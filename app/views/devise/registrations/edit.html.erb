@@ -5,9 +5,11 @@
 
   <%= f.input :name %>
   <%= f.input :email %>
-  <%= f.input :password, label: "New Password", autocomplete: "off" %>
-  <%= f.input :password_confirmation, label: "New Password Confirmation", autocomplete: "off" %>
+  <%= f.input :location %>
   <%= f.input :current_password %>
+  <%= f.input :password, label: "New password", autocomplete: "off" %>
+  <%= f.input :password_confirmation, label: "Confirm new password", autocomplete: "off" %>
+
 
   <div class="form-actions">
     <%= f.submit "Update", class: "btn btn-primary"%>
