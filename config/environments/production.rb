@@ -20,6 +20,9 @@ Omrails::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # In production, :host should be set to the actual host of your application.
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
