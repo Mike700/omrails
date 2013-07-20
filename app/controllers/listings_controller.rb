@@ -1,4 +1,6 @@
 class ListingsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
+
   # GET /listings
   # GET /listings.json
   def index
@@ -24,7 +26,7 @@ class ListingsController < ApplicationController
   # GET /listings/new
   # GET /listings/new.json
   def new
-    @listing = Listing.new
+    @listing = current_user.listings.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +36,13 @@ class ListingsController < ApplicationController
 
   # GET /listings/1/edit
   def edit
-    @listing = Listing.find(params[:id])
+    @listing = current_user.listings.find(params[:id])
   end
 
   # POST /listings
   # POST /listings.json
   def create
-    @listing = Listing.new(params[:listing])
+    @listing = current_user.listings.new(params[:listing])
 
     respond_to do |format|
       if @listing.save
@@ -56,7 +58,7 @@ class ListingsController < ApplicationController
   # PUT /listings/1
   # PUT /listings/1.json
   def update
-    @listing = Listing.find(params[:id])
+    @listing = current_user.listings.find(params[:id])
 
     respond_to do |format|
       if @listing.update_attributes(params[:listing])
@@ -72,7 +74,7 @@ class ListingsController < ApplicationController
   # DELETE /listings/1
   # DELETE /listings/1.json
   def destroy
-    @listing = Listing.find(params[:id])
+    @listing = current_user.listings.find(params[:id])
     @listing.destroy
 
     respond_to do |format|

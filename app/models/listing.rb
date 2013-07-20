@@ -10,4 +10,8 @@ class Listing < ActiveRecord::Base
   validates :rate, presence: true
 
   validates :vehicle, presence: true
+
+  belongs_to :user
+
+  validates :user_id, presence: true
 end
