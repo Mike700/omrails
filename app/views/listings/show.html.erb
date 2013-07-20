@@ -2,22 +2,27 @@
   <div class= "span6 offset3">
     <div class="well">
 
-<p><h3><%= @listing.title %></h3></p>
-<p align= "center"><%= image_tag @listing.image(:large) %></p>
-	
-		<p><%= @listing.user.name %></p>
-		<p><%= @listing.description %></p>
-		<p><%= @listing.location %></p>
-		<p><%= @listing.vehicle %></p>
-		<p><h3>£ <%= @listing.rate %> <small>per hour</small></h3></p>
-		<p><%= @listing.created_at %></p>
-		
-		<% if current_user == @listing.user %>
-				<%= link_to 'Edit', edit_listing_path(@listing) %> |  	
-		<% end %>
-		
-		<%= link_to 'Back', listings_path %>
+<div align="right">
+	     <% if current_user == @listing.user %>
+		 <td><%= link_to "Edit", edit_listing_path(@listing), class: "btn btn-primary btn-small" %></td>
+		 <td><%= link_to 'Destroy', @listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-small" %></td>
+		 <% end %>
+		 <td><%= link_to 'Back', listings_path, class: "btn btn-primary btn-small" %></td>
+</div>
 
-  </div>
-  </div>
+<div>
+
+	<p><h3><%= @listing.title %></h3></p>
+
+    <p align= "center"><%= image_tag @listing.image(:large) %></p>
+	
+		<p><h4><%= @listing.user.name %></h4></p>
+		<p><%= @listing.description %></p>
+		<p><h3><%= @listing.location %></h3></p>
+		<p><h5><%= @listing.vehicle %></h5></p>
+		<p><h3>£ <%= @listing.rate %> <small>per hour</small></h3></p>
+		<p align= "right">Created: <%= @listing.created_at %></p>
+</div>
+</div>
+</div>
 </div>
