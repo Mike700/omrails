@@ -1,4 +1,7 @@
 Omrails::Application.routes.draw do
+  resources :listings
+
+
   devise_for :users
 
   root :to => 'pages#home'
