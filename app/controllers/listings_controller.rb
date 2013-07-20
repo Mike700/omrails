@@ -83,3 +83,10 @@ class ListingsController < ApplicationController
     end
   end
 end
+
+  # Image parameters requirement
+def listing_params
+   params.require(:listing).permit(:description, :image)
+end
+
+
