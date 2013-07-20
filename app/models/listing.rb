@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-  attr_accessible :description, :location, :rate, :title, :vehicle, :image
+  attr_accessible :description, :location, :rate, :title, :vehicle, :image, :image_file_name
 
   validates :title, presence: true
   validates :description, presence: true
