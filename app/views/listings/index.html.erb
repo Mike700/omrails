@@ -1,4 +1,10 @@
-<h1>Listings</h1>
+<table>
+   <tr>
+   <th width="1266" align="left"><h1>Listings</h1></th>
+   <th width="100"align="right"><%= link_to "Add+", new_listing_path, class: "btn btn-primary btn-large"%></th>
+   </tr> 
+</table>
+
 <table class="table table-hover">
   <tr>
     <th></th>
@@ -9,7 +15,11 @@
     <th>Rate</th>
     <th></th>
   </tr>
-    <%= render @listings %>
+    <div id="listings">
+        <%= will_paginate @listings %>
+        <%= render @listings %>
+    </div>
 </table>
-  <p align="right"><%= link_to "New Listing", new_listing_path, class: "btn btn-primary btn-large" %></p>
-<br />
+<%= will_paginate @listings %>
+
+
