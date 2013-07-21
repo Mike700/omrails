@@ -1,16 +1,19 @@
  <tr>
     <td width= "240" height= "100"><%= image_tag listing.image(:thumbnail) %></td>
-    <td width= "120" height= "100"><%= link_to listing.user.name, listing.user %></td>
+    <td width= "180" height= "100"><%= link_to listing.user.name, listing.user %></td>
     <td width= "120" height= "100"><%= listing.location %></td>
-    <td width= "120" height= "100"><%= listing.vehicle %></td>
-    <td width= "360" height= "100"><%= listing.description %></td>
+    <td width= "300" height= "100"><%= listing.title %></td>
+    <td width= "200" height= "100"><%= listing.vehicle %></td>
     <td width= "100" height= "100">£<%= listing.rate %> / hour</td>
-    
-    <td align="center"><%= link_to "Show", listing, class: "btn btn-primary btn-small" %></td>
-
-
-
+    <td width= "65" height= "100" valign="middle" style="vertical-align:middle">
+	    <% if current_user == listing.user %>
+	    <div class="btn-group btn-group-vertical">
+	    <%= link_to "Show", listing, class: "btn btn-primary btn-small" %>
+	    <%= link_to "Edit", edit_listing_path(listing), class: "btn btn-primary btn-small" %>
+	    <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-small" %>
+	    <% else %>
+	    </div>
+	    <%= link_to "Show", listing, class: "btn btn-primary btn-small" %>
+	    <% end %>
+</td>
   </tr>
-
-
-  

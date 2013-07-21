@@ -1,6 +1,18 @@
 $baseFontFamily: Oxygen;
 
+$navbarBackgroundHighlight: #4f4d4e;
+$navbarText: white;
+$navbarBrandColor: white;
+$navbarLinkColor: gray;
+$navbarLinkColorHover: white;
+$navbarLinkColorActive: white;
+$navbarLinkBackgroundHover: transparent;
 
+$btnPrimaryBackground: #f79647;
+$btnPrimaryBackgroundHighlight: #f79647;
+
+$linkColor: #f79647;
+$linkColorHover: orange;
 
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 
@@ -11,3 +23,13 @@ body{
 }
 
 @import 'bootstrap-responsive';
+
+
+.footer {
+	
+	margin-top: 50px;
+	color: #4f4d4e;
+	a {
+			color: $gray;
+	}
+}

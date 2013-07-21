@@ -16,11 +16,11 @@
 
     <p align= "center"><%= image_tag @listing.image(:large) %></p>
 	
-		<p><h4><%= @listing.user.name %></h4></p>
+		<p><h4><%= link_to @listing.user.name, @listing.user %></h4></p>
 		<p><%= @listing.description %></p>
 		<p><h3><%= @listing.location %></h3></p>
 		<p><h5><%= @listing.vehicle %></h5></p>
-		<p><h3>£ <%= @listing.rate %> <small>per hour</small></h3></p>
+		<p><font color="#f79647"><h3>£ <%= @listing.rate %> <small>per hour</small></h3></font></p>
 		<p align= "right">Created: <%= @listing.created_at %></p>
 </div>
 </div>
