@@ -1,0 +1,18 @@
+<h1>Listings for <font color="orange"><%= @user.name %></font></h1>
+
+<table class="table table-hover">
+  <tr>
+    <th></th>
+    <th>Username</th>
+    <th>Area</th>
+    <th>Vehicle</th>
+    <th>Description</th>
+    <th>Rate</th>
+    <th></th>
+  </tr>
+    <div id="listings">
+        <%= will_paginate @listings %>
+        <%= render @listings %>
+    </div>
+</table>
+<%= will_paginate @listings %>

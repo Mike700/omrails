@@ -1,6 +1,6 @@
  <tr>
     <td width= "240" height= "100"><%= image_tag listing.image(:thumbnail) %></td>
-    <td width= "120" height= "100"><%= listing.user.name %></td>
+    <td width= "120" height= "100"><%= link_to listing.user.name, listing.user %></td>
     <td width= "120" height= "100"><%= listing.location %></td>
     <td width= "120" height= "100"><%= listing.vehicle %></td>
     <td width= "360" height= "100"><%= listing.description %></td>
