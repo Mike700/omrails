@@ -22,3 +22,6 @@ doc/
 
 # Ignore paperclip image files
 /public/system
+
+# Ignore sample image files
+/fake-data
